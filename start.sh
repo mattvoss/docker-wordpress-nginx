@@ -6,7 +6,7 @@ if [ ! -f /usr/share/nginx/www/wp-config.php ]; then
   # Here we generate random passwords (thank you pwgen!). The first two are for mysql users, the last batch for random keys in wp-config.php
   WORDPRESS_DB="wordpress"
   WORDPRESS_PASSWORD=${WORDPRESS_PASSWORD:-`pwgen -c -n -1 12`}
-  DB_HOST=${DB_HOST:-localhost}
+  DB_HOST=${DB_PORT_3306_TCP_ADDR:-localhost}
   #This is so the passwords show up in logs.
 
   sed -e "s/database_name_here/$WORDPRESS_DB/
